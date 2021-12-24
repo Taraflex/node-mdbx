@@ -10,9 +10,9 @@ add_definitions(-DMDBX_ENV_CHECKPID=0)
 add_definitions(-DMDBX_WITHOUT_MSVC_CRT=1)
 
 if(CMAKE_VERSION VERSION_LESS 3.0.0)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20")
 else()
-    set(CMAKE_CXX_STANDARD 17)
+    set(CMAKE_CXX_STANDARD 20)
     set(CMAKE_CXX_STANDARD_REQUIRED ON)
 endif()
 
@@ -41,7 +41,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE "deps/mdbx")
 target_link_libraries(${PROJECT_NAME} ${CMAKE_JS_LIB})
 
 if(MSVC)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++latest")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++20")
     target_link_libraries(${PROJECT_NAME} ntdll.lib)
 endif()
 

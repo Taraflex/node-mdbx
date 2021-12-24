@@ -2,6 +2,7 @@
 
 #include <string>
 #include <vector>
+#include <iterator>
 
 #include <napi.h>
 #include "mdbx.h"
